@@ -1,8 +1,5 @@
-# Waves Client (beta version)
+# Agate Wallet (beta version)
 
-The new client is available here and at [beta.wavesplatform.com](https://beta.wavesplatform.com/).
-
-The old stable client is available at [waveswallet.io](https://waveswallet.io/) and on branch [old-client](https://github.com/wavesplatform/WavesGUI/tree/old-client).
 
 ## Setup
 
