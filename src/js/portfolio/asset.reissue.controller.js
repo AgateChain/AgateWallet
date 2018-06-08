@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var FIXED_REISSUE_FEE = new Money(1, Currency.WAVES);
+    var FIXED_REISSUE_FEE = new Money(1, Currency.Agate);
 
     function WavesAssetReissueController($scope, $timeout, constants, events, applicationContext, assetService,
                                          dialogService, notificationService, formattingService, apiService,
@@ -110,7 +110,7 @@
 
         function resetReissueForm() {
             reissue.amount = '0';
-            reissue.confirm.amount = Money.fromTokens(0, Currency.WAVES);
+            reissue.confirm.amount = Money.fromTokens(0, Currency.Agate);
             reissue.confirm.fee = reissue.fee;
         }
     }

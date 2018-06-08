@@ -66,8 +66,8 @@
         }
 
         function processPaymentTransaction(transaction) {
-            transaction.formatted.amount = Money.fromCoins(transaction.amount, Currency.WAVES).formatAmount();
-            transaction.formatted.asset = Currency.WAVES.displayName;
+            transaction.formatted.amount = Money.fromCoins(transaction.amount, Currency.Agate).formatAmount();
+            transaction.formatted.asset = Currency.Agate.displayName;
         }
 
         function processAssetIssueTransaction(transaction) {
@@ -81,7 +81,7 @@
         }
 
         function processCreateAliasTransaction(transaction) {
-            transaction.formatted.asset = Currency.WAVES.displayName;
+            transaction.formatted.asset = Currency.Agate.displayName;
         }
 
         function processAssetTransferTransaction(transaction) {
@@ -92,7 +92,7 @@
                     currency = asset.currency;
                 }
             } else {
-                currency = Currency.WAVES;
+                currency = Currency.Agate;
             }
 
             if (!currency) {
@@ -114,16 +114,16 @@
         }
 
         function processStartLeasingTransaction(transaction) {
-            transaction.formatted.amount = Money.fromCoins(transaction.amount, Currency.WAVES).formatAmount();
-            transaction.formatted.asset = Currency.WAVES.displayName;
+            transaction.formatted.amount = Money.fromCoins(transaction.amount, Currency.Agate).formatAmount();
+            transaction.formatted.asset = Currency.Agate.displayName;
         }
 
         function processCancelLeasingTransaction(transaction) {
-            transaction.formatted.asset = Currency.WAVES.displayName;
+            transaction.formatted.asset = Currency.Agate.displayName;
         }
 
         function processMassPaymentTransaction(transaction) {
-            var currency = Currency.WAVES;
+            var currency = Currency.Agate;
             var assetId = transaction.assetId;
             if (assetId) {
                 var asset = applicationContext.cache.assets[assetId];
@@ -154,7 +154,7 @@
             }
 
             transaction.formatted.type = type;
-            transaction.formatted.fee = Money.fromCoins(totalFee, Currency.WAVES).formatAmount(true);
+            transaction.formatted.fee = Money.fromCoins(totalFee, Currency.Agate).formatAmount(true);
 
             var currency;
             if (assetId) {
@@ -163,7 +163,7 @@
                     currency = asset.currency;
                 }
             } else {
-                currency = Currency.WAVES;
+                currency = Currency.Agate;
             }
 
             if (currency) {
@@ -173,7 +173,7 @@
         }
 
         function formatFee(transaction) {
-            var currency = Currency.WAVES;
+            var currency = Currency.Agate;
             var assetId = transaction.feeAsset;
             if (assetId) {
                 var asset = applicationContext.cache.assets[assetId];
@@ -186,7 +186,7 @@
         }
 
         function getFeeAsset(transaction) {
-            var currency = Currency.WAVES;
+            var currency = Currency.Agate;
             var assetId = transaction.feeAsset;
             if (assetId) {
                 var asset = applicationContext.cache.assets[assetId];

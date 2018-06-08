@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var DEFAULT_FEE_AMOUNT = '0.001',
+    var DEFAULT_FEE_AMOUNT = '0.01',
         DEFAULT_ERROR_MESSAGE = 'Connection is lost';
 
     function WavesWalletWithdrawController ($scope, constants, events, autocomplete, dialogService, $element,
@@ -11,7 +11,7 @@
         var ctrl = this;
         var type = $element.data('type');
 
-        var minimumFee = new Money(constants.MINIMUM_TRANSACTION_FEE, Currency.WAVES);
+        var minimumFee = new Money(constants.MINIMUM_TRANSACTION_FEE, Currency.Agate);
         var notPermittedBitcoinAddresses = {};
 
         ctrl.broadcast = new transactionBroadcast.instance(apiService.assets.transfer,
@@ -43,7 +43,7 @@
                 },
                 withdrawFee: {
                     required: true,
-                    decimal: Currency.WAVES.precision,
+                    decimal: Currency.Agate.precision,
                     min: minimumFee.toTokens()
                 },
                 withdrawTotal: {
@@ -154,7 +154,7 @@
             }).then(function (depositDetails) {
                 notPermittedBitcoinAddresses[depositDetails.address] = 1;
 
-                return coinomatService.getDepositDetails(Currency.BTC, Currency.WAVES,
+                return coinomatService.getDepositDetails(Currency.BTC, Currency.Agate,
                     applicationContext.account.address);
             }).then(function (depositDetails) {
                 notPermittedBitcoinAddresses[depositDetails.address] = 1;
@@ -193,7 +193,7 @@
             }
 
             try {
-                var withdrawCost = Money.fromTokens(ctrl.autocomplete.getFeeAmount(), Currency.WAVES);
+                var withdrawCost = Money.fromTokens(ctrl.autocomplete.getFeeAmount(), Currency.Agate);
                 validateWithdrawCost(withdrawCost, ctrl.wavesBalance);
                 if (ctrl.assetBalance.currency === Currency.BTC) {
                     validateRecipientBTCAddress(ctrl.recipient);
@@ -206,7 +206,7 @@
             }
 
             var total = Money.fromTokens(ctrl.total, ctrl.assetBalance.currency);
-            var fee = Money.fromTokens(ctrl.autocomplete.getFeeAmount(), Currency.WAVES);
+            var fee = Money.fromTokens(ctrl.autocomplete.getFeeAmount(), Currency.Agate);
             ctrl.confirm.amount = total;
             ctrl.confirm.fee = fee;
             ctrl.confirm.recipient = ctrl.recipient;

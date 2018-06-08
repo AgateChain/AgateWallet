@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var FEE_CURRENCY = Currency.WAVES;
+    var FEE_CURRENCY = Currency.Agate;
 
     function LeasingFormController($timeout, constants, applicationContext,
                                    apiService, dialogService, notificationService, transactionBroadcast,
@@ -10,11 +10,11 @@
         var minimumFee = new Money(constants.MINIMUM_TRANSACTION_FEE, FEE_CURRENCY);
 
         ctrl.fee = minimumFee;
-        ctrl.availableBalance = Money.fromCoins(0, Currency.WAVES);
+        ctrl.availableBalance = Money.fromCoins(0, Currency.Agate);
 
         ctrl.broadcast = new transactionBroadcast.instance(apiService.leasing.lease,
             function (transaction) {
-                var amount = Money.fromCoins(transaction.amount, Currency.WAVES);
+                var amount = Money.fromCoins(transaction.amount, Currency.Agate);
                 var address = transaction.recipient;
                 var displayMessage = 'Leased ' + amount.formatAmount(true) + ' of ' +
                     amount.currency.displayName +
@@ -127,7 +127,7 @@
         function reset() {
             ctrl.amount = '0';
             ctrl.recipient = '';
-            ctrl.confirm.amount = Money.fromTokens(0, Currency.WAVES);
+            ctrl.confirm.amount = Money.fromTokens(0, Currency.Agate);
             ctrl.confirm.fee = minimumFee;
         }
     }

@@ -97,11 +97,11 @@ module.exports = function (grunt) {
                 },
                 mainnet: {
                     name: 'mainnet',
-                    code: 'W',
-                    server: 'https://nodes.wavesplatform.com',
+                    code: 'S',
+                    server: 'https://api.agate.services',
                     coinomat: 'https://coinomat.com',
-                    matcher: 'https://matcher.wavesplatform.com',
-                    datafeed: 'https://marketdata.wavesplatform.com'
+                    matcher: '',
+                    datafeed: ''
                 },
                 devnet: {
                     name: 'devnet',

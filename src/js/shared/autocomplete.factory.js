@@ -7,16 +7,16 @@
             var result = {
                 fees: [
                     {
-                        amount: 0.001,
-                        displayText: '0.001 WAVE (Economic)'
+                        amount: 0.01,
+                        displayText: '0.01 AGT (Economic)'
                     },
                     {
-                        amount: 0.0015,
-                        displayText: '0.0015 WAVE (Standard)'
+                        amount: 0.015,
+                        displayText: '0.015 AGT (Standard)'
                     },
                     {
-                        amount: 0.002,
-                        displayText: '0.002 WAVE (Premium)'
+                        amount: 0.02,
+                        displayText: '0.02 AGT (Premium)'
                     }
                 ],
                 selectedFee: undefined,

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var FEE_CURRENCY = Currency.WAVES;
+    var FEE_CURRENCY = Currency.Agate;
 
     function AssetTransferController($scope, $timeout, constants, events, autocomplete, applicationContext,
                                      assetService, apiService, dialogService, formattingService,
@@ -43,7 +43,7 @@
                 },
                 assetFee: {
                     required: true,
-                    decimal: Currency.WAVES.precision,
+                    decimal: Currency.Agate.precision,
                     min: minimumFee.toTokens()
                 },
                 assetAttachment: {
@@ -156,7 +156,7 @@
         function resetPaymentForm() {
             ctrl.recipient = '';
             ctrl.amount = '0';
-            ctrl.confirm.amount = Money.fromTokens(0, Currency.WAVES);
+            ctrl.confirm.amount = Money.fromTokens(0, Currency.Agate);
             ctrl.confirm.fee = Money.fromTokens(constants.MINIMUM_TRANSACTION_FEE, FEE_CURRENCY);
             ctrl.autocomplete.defaultFee(constants.MINIMUM_TRANSACTION_FEE);
         }

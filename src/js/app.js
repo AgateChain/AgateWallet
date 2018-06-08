@@ -86,7 +86,7 @@ function AngularApplicationConfig($provide, $compileProvider, $validatorProvider
         'optionally starting with \'1W\'');
 
     $validatorProvider.addMethod('decimal', function (value, element, maxDigits) {
-        maxDigits = angular.isNumber(maxDigits) ? maxDigits : Currency.WAVES.precision;
+        maxDigits = angular.isNumber(maxDigits) ? maxDigits : Currency.Agate.precision;
         var regex = new RegExp('^(?:-?\\d+)?(?:\\.\\d{0,' + maxDigits + '})?$');
         return this.optional(element) || regex.test(value);
     }, 'Amount is expected with a dot (.) as a decimal separator with no more than {0} fraction digits');

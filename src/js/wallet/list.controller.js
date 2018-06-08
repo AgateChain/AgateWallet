@@ -9,7 +9,7 @@
 
         function sendCommandEvent(event, currency) {
             var assetWallet = findWalletByCurrency(currency);
-            var wavesWallet = findWalletByCurrency(Currency.WAVES);
+            var wavesWallet = findWalletByCurrency(Currency.Agate);
 
             $scope.$broadcast(event, {
                 assetBalance: assetWallet.balance,
@@ -37,7 +37,7 @@
                 depositWith: Currency.BTC
             },
             {
-                balance: new Money(0, Currency.WAVES),
+                balance: new Money(0, Currency.Agate),
                 depositWith: Currency.BTC
             },
             {
@@ -88,7 +88,7 @@
 
             if (id === Currency.BTC.id ||
                 id === Currency.ETH.id ||
-                id === Currency.WAVES.id ||
+                id === Currency.Agate.id ||
                 id === Currency.LTC.id ||
                 id === Currency.ZEC.id ||
                 id === Currency.BCH.id
@@ -106,7 +106,7 @@
         }
 
         function deposit (wallet) {
-            if (wallet.balance.currency === Currency.WAVES) {
+            if (wallet.balance.currency === Currency.Agate) {
                 depositFromCard(wallet.balance.currency);
             } else if (wallet.balance.currency === Currency.TRY) {
                 dialogService.open('#digilira-dialog');
@@ -139,8 +139,8 @@
         function refreshWallets() {
             apiService.address.balance(applicationContext.account.address)
                 .then(function (response) {
-                    var wavesWallet = findWalletByCurrency(Currency.WAVES);
-                    wavesWallet.balance = Money.fromCoins(response.balance, Currency.WAVES);
+                    var wavesWallet = findWalletByCurrency(Currency.Agate);
+                    wavesWallet.balance = Money.fromCoins(response.balance, Currency.Agate);
                 });
 
             apiService.assets.balance(applicationContext.account.address).then(function (response) {
@@ -178,12 +178,6 @@
         // Assets ID substitution for testnet
         function patchCurrencyIdsForTestnet() {
             if ($scope.isTestnet()) {
-                Currency.EUR.id = '2xnE3EdpqXtFgCP156qt1AbyjpqdZ5jGjWo3CwTawcux';
-                Currency.USD.id = 'HyFJ3rrq5m7FxdkWtQXkZrDat1F7LjVVGfpSkUuEXQHj';
-                Currency.BTC.id = 'Fmg13HEHJHuZYbtJq8Da8wifJENq8uBxDuWoP9pVe2Qe';
-                Currency.ETH.id = '3fVdr1oiX39uS82ZGUPnu7atNQtFHZfPnseRDUcDxrhp';
-                Currency.LTC.id = 'NO_ID_YET'; // FIXME
-                Currency.ZEC.id = 'NO_ID_YET'; // FIXME
                 Currency.invalidateCache();
             }
         }

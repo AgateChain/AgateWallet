@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var FEE_CURRENCY = Currency.WAVES;
+    var FEE_CURRENCY = Currency.Agate;
     var DEFAULT_ERROR_MESSAGE = 'The Internet connection is lost';
 
     // TODO : add the `exceptField` attribute or a list of all the needed fields.

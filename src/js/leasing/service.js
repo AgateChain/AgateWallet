@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var DEFAULT_CURRENCY = Currency.WAVES;
+    var DEFAULT_CURRENCY = Currency.Agate;
 
     function WavesLeasingService (apiService) {
         function parseBalance(response) {

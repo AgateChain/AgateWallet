@@ -58,10 +58,10 @@ describe('Asset.Transfer.Controller', function() {
             assetBalance = Money.fromTokens(10, Currency.USD);
 
         if (!wavesBalance)
-            wavesBalance = Money.fromTokens(20, Currency.WAVES);
+            wavesBalance = Money.fromTokens(20, Currency.Agate);
 
         var assetId;
-        if (assetBalance.currency !== Currency.WAVES) {
+        if (assetBalance.currency !== Currency.Agate) {
             assetId = assetBalance.currency.id;
             applicationContext.cache.assets[assetId] = {
                 balance: assetBalance,
@@ -79,7 +79,7 @@ describe('Asset.Transfer.Controller', function() {
         expect(controller.recipient).toEqual('');
         expect(controller.amount).toEqual('0');
         expect(controller.confirm.amount.toTokens()).toEqual(0);
-        expect(controller.confirm.fee.toTokens()).toEqual(0.001);
+        expect(controller.confirm.fee.toTokens()).toEqual(0.01);
         expect(controller.confirm.recipient).toEqual('');
         expect(controller.autocomplete).toBeDefined();
         expect(controller.broadcast).toBeDefined();
@@ -109,7 +109,7 @@ describe('Asset.Transfer.Controller', function() {
         expect(controller.confirm.amount.toTokens()).toEqual(7);
         expect(controller.confirm.amount.currency).toEqual(Currency.CNY);
         expect(controller.confirm.fee.toTokens()).toEqual(0.002);
-        expect(controller.confirm.fee.currency).toEqual(Currency.WAVES);
+        expect(controller.confirm.fee.currency).toEqual(Currency.Agate);
         expect(controller.confirm.recipient).toEqual(address);
 
         expect(controller.broadcast.setTransaction).toHaveBeenCalled();

@@ -26,7 +26,7 @@
     "decimal.js": "https://github.com/MikeMcl/decimal.js/archive/v5.0.8.zip",
     "ngclipboard": "https://github.com/beregovoy68/ngclipboard.git#1.1.3",
     "waves-angular-validate": "https://github.com/beregovoy68/angular-validate.git#master",
-    "wavesplatform-core-js": "https://github.com/wavesplatform/wavesplatform.core.js.git#master"
+    "wavesplatform-core-js": "https://github.com/AgateChain/Agate.core.js.git#master"
   },
   "analytics": false
 }

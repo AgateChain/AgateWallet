@@ -7,7 +7,7 @@
         var refreshPromise;
         var refreshDelay = 10 * 1000;
 
-        ctrl.wavesBalance = new Money(0, Currency.WAVES);
+        ctrl.wavesBalance = new Money(0, Currency.Agate);
         ctrl.assets = [];
         ctrl.noData = true;
         ctrl.assetTransfer = assetTransfer;
@@ -71,7 +71,7 @@
         function refreshBalance() {
             apiService.address.balance(applicationContext.account.address)
                 .then(function (response) {
-                    ctrl.wavesBalance = Money.fromCoins(response.balance, Currency.WAVES);
+                    ctrl.wavesBalance = Money.fromCoins(response.balance, Currency.Agate);
                 });
         }
 
@@ -86,6 +86,7 @@
                     };
 
                     // adding asset details to cache
+                    assetBalance.issueTransaction.assetId = assetBalance.issueTransaction.id;
                     applicationContext.cache.putAsset(assetBalance.issueTransaction);
                     applicationContext.cache.updateAsset(id, assetBalance.balance,
                         assetBalance.reissuable, assetBalance.quantity);
