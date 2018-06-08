@@ -24,42 +24,12 @@
         }
 
         ctrl.wallets = [
-            {
-                balance: new Money(0, Currency.USD),
-                depositWith: Currency.USD
-            },
-            {
-                balance: new Money(0, Currency.EUR),
-                depositWith: Currency.EUR
-            },
-            {
-                balance: new Money(0, Currency.BTC),
-                depositWith: Currency.BTC
-            },
+
             {
                 balance: new Money(0, Currency.Agate),
-                depositWith: Currency.BTC
+                depositWith: Currency.Agate
             },
-            {
-                balance: new Money(0, Currency.ETH),
-                depositWith: Currency.ETH
-            },
-            {
-                balance: new Money(0, Currency.LTC),
-                depositWith: Currency.LTC
-            },
-            {
-                balance: new Money(0, Currency.ZEC),
-                depositWith: Currency.ZEC
-            },
-            {
-                balance: new Money(0, Currency.TRY),
-                depositWith: Currency.TRY
-            },
-            {
-                balance: new Money(0, Currency.BCH),
-                depositWith: Currency.BCH
-            }
+
         ];
 
         ctrl.transactions = [];

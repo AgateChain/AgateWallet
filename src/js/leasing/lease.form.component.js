@@ -7,7 +7,7 @@
                                    apiService, dialogService, notificationService, transactionBroadcast,
                                    formattingService, addressService, leasingService, leasingRequestService) {
         var ctrl = this;
-        var minimumFee = new Money(constants.MINIMUM_TRANSACTION_FEE, FEE_CURRENCY);
+        var minimumFee = new Money(1, FEE_CURRENCY);
 
         ctrl.fee = minimumFee;
         ctrl.availableBalance = Money.fromCoins(0, Currency.Agate);
