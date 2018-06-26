@@ -34,7 +34,7 @@
                 } catch (e) {
                     throw new Error('Not loaded module with name "' + name);
                 }
-            }
+             }
         };
     }
 
