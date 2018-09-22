@@ -281,9 +281,6 @@
           <input id="addressBackup" class="wInput" type="text" readonly ng-model="menu.address"/>
         </form>
       </div>
-      <a ng-click="home.featureUnderDevelopment()">
-        <img class="header-Icon fade" tooltipster tooltip-theme="tooltipster-theme2" src="img/uiTB-iconset-preferences.svg" alt="Preferences" title="Preferences"/>
-      </a>
       <a ng-click="menu.showProfileDialog()">
         <img class="header-Icon fade" tooltipster tooltip-theme="tooltipster-theme2" src="img/uiTB-iconset-profile.svg" alt="User profile" title="User profile"/>
       </a>
@@ -391,16 +388,7 @@
               tooltip-html
               tooltip-theme="tooltipster-theme3"
               tooltip-title="<center><u>Tokens Creation tab</u></center><br/>Area in which assets can be created."></span>
-        <span waves-tab
-              on-select="nav.changeTab(pageId)"
-              current-page-id="nav.currentTab"
-              page-id="community"
-              caption="'Community tab'"
-              tooltipster
-              tooltip-html
-              tooltip-theme="tooltipster-theme3"
-              tooltip-title="<center><u>Community tab</u></center><br/>Resources to learn more about Agate project such as <br/>forums, blogs, websites, etc."></span>
-      </div>
+         </div>
     </section>
 
     <section id="mainBody" class="wScroll">
@@ -1211,77 +1199,6 @@
         </div>
         <!-- / TOKENS TAB -->
 
-        <!-- MESSAGES TAB -->
-        <div id="mBB-messages" class="mBB-content" ng-switch-when="messages">
-          <div class="phContent">
-            <h1>MESSAGING CENTER</h1>
-            <br/>
-            <p>Soon to be renamed/rebranded as CONTACTS, this is an area in which users will be able to add other individuals or groups to several list types, providing an easy way to keep track of friends, execute regular, automated payments, and much more.
-              <br/><br/>
-              The Contacts area services are estimated to be completed on the first half of 2017.
-            </p>
-            <br/><br/>
-            <img src="img/tab_cont_prev.svg" />
-          </div>
-          <div id="addContact-wPop" class="wavesPop">
-            <img class="wPop-header" src="img/modal-header.svg" />
-            <form id="addContactForm" class="wPop-content">
-              <h2 class="sectionHeader">ADD CONTACT</h2>
-              <p>Fill the fields below in order to add a new contact to your list:</p>
-              <p>Name</p>
-              <input type="text" id="contactname" placeholder="" class="wInput" />
-
-              <p>Address</p>
-              <input type="text" id="contactaddress" placeholder="" class="wInput" />
-
-              <p>Email</p>
-              <input type="email" id="contactemail" placeholder="" class="wInput" />
-
-              <br/><br/>
-              <button id="addContactSubmit" class="wButton fade">ADD CONTACT</button>
-            </form>
-          </div>
-        </div>
-        <!-- / MESSAGES TAB -->
-
-        <!-- COMMUNITY TAB -->
-        <div id="mBB-community" class="mBB-content" ng-switch-when="community" ng-controller="communityController as community">
-          <!-- Temporary -->
-          <p>DISCLAIMER: The Community tab will temporarily hold block information for testing purposes. After alpha phase this data  will be relocated inside the Preferences - Advanced area.</p>
-          <h2 class="sectionHeader">LATEST BLOCKS INFORMATION</h2>
-          <p class="centerIt">
-          <div id="latestBlocks" class="wavesTable wScroll" >
-            <table>
-              <thead>
-              <tr class="fade">
-                <td>HEIGHT</td>
-                <td>DATE</td>
-                <td>TRANSACTIONS</td>
-                <td>GENERATOR</td>
-              </tr>
-              </thead>
-              <tbody id="latestBlocksTable">
-              <tr class="fade">
-                <td>{{community.candidate.block}}</td>
-                <td><i>incoming</i></td>
-                <td>{{community.candidate.size}}</td>
-                <td><i>unconfirmed</i></td>
-              </tr>
-              <tr class="fade" ng-repeat="block in community.blocks | orderBy:'timestamp':true">
-                <td>{{block.height}}</td>
-                <td>{{block.timestamp | formatting}}</td>
-                <td>{{block.transactions.length}}</td>
-                <td>
-                  <span class="clipSpan" tooltipster tooltip-theme="tooltipster-theme1" ngclipboard title="Copy this address to the clipboard." data-clipboard-text="{{block.generator}}" ngclipboard-success="clipboardOk()">{{block.generator}}</span>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-
-          </p>
-        </div>
-        <!-- /COMMUNITY TAB -->
       </section>
     </section>
   </div>
